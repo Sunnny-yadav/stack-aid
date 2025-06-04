@@ -2,7 +2,7 @@ import {env} from '@/app/env'
 import { Client, Avatars, Storage, Databases, Users } from 'node-appwrite';
 
 
-let client = new Client();
+const client = new Client();
 
 client
     .setEndpoint(env.appWrite.endPoint) // Your API Endpoint
