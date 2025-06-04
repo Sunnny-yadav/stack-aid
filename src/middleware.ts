@@ -1,5 +1,4 @@
 import {NextResponse} from 'next/server'
-import type {NextRequest} from 'next/server'
 import getOrCreateDB from './models/server/dbSetup'
 import getOrCreateStorage from './models/server/storageSetUp'
 

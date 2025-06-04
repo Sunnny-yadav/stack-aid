@@ -6,7 +6,7 @@ export default async function getOrCreateStorage(){
     try {
         await storages.getBucket(questionAttachmentBucket)
         console.log("storage connected")
-    } catch (_) {
+    } catch {
         try {
             await storages.createBucket(
                 questionAttachmentBucket,

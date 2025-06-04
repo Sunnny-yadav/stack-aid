@@ -10,7 +10,7 @@ export default async function getOrCreateDB(){
     try {
         await databases.get(db)
         console.log("Database connected")
-    } catch (_) {
+    } catch {
         
         try {
             await databases.create(db,db);
