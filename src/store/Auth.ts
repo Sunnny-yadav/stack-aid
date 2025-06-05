@@ -25,7 +25,6 @@ interface IAuthStore {
   ) => Promise<{ success: boolean; error?: AppwriteException | null }>;
 
   createAccount: (
-    id:string,
     name: string,
     email: string,
     password: string
