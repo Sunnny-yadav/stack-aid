@@ -5,7 +5,7 @@ import { persist } from "zustand/middleware";
 import { AppwriteException, ID, Models } from "appwrite";
 import { account } from "@/models/client/config";
 
-interface userPrefereces {
+export interface userPrefereces {
   reputation: number;
 };
 
