@@ -5,7 +5,7 @@ import { persist } from "zustand/middleware";
 import { AppwriteException, ID, Models } from "appwrite";
 import { account } from "@/models/client/config";
 
-interface userPrefereces {
+export interface userPrefereces {
   reputation: number;
 };
 
@@ -25,10 +25,9 @@ interface IAuthStore {
   ) => Promise<{ success: boolean; error?: AppwriteException | null }>;
 
   createAccount: (
-    id:string,
-    name: string,
     email: string,
-    password: string
+    password: string,
+    name: string
   ) => Promise<{ success: boolean; error?: AppwriteException | null }>;
 
   logout: () => Promise<void>;
