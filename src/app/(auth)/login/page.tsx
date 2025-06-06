@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { IconBrandGithub, IconBrandGoogle } from "@tabler/icons-react";
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const BottomGradient = () => {
     return (
@@ -31,6 +32,7 @@ export default function Login(){
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState("")
     const {login} = useAuthStore()
+    const router = useRouter()
 
     const handleSubmit = async (e : React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -54,6 +56,7 @@ export default function Login(){
                 return
             }else{
                 setIsLoading(false)
+                router.push("/")
             }
         } catch (error) {
             console.log("(auth)/login ::",error)
@@ -83,7 +86,7 @@ export default function Login(){
                 <LabelInputContainer className="mb-4">
                     <Label htmlFor="email">Email Address</Label>
                     <Input
-                    className="text-black"
+                    
                         id="email"
                         name="email"
                         placeholder="projectmayhem@fc.com"
@@ -92,7 +95,7 @@ export default function Login(){
                 </LabelInputContainer>
                 <LabelInputContainer className="mb-4">
                     <Label htmlFor="password">Password</Label>
-                    <Input className="text-black" id="password" name="password" placeholder="••••••••" type="password" />
+                    <Input  id="password" name="password" placeholder="••••••••" type="password" />
                 </LabelInputContainer>
 
                 <button

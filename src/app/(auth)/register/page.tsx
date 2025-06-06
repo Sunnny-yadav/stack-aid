@@ -49,11 +49,11 @@ export default function Register(){
                 setError(()=> "All Fields are requried");
                 return
             }
-            console.log(firstname , lastname,email , password)
+            
             const response = await createAccount(
-                `${firstname} ${lastname}`,
                 email.toString(),
-                password.toString()
+                password.toString(),
+                `${firstname} ${lastname}`
             );
 
             if(response.error){
