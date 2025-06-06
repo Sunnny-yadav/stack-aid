@@ -25,9 +25,9 @@ interface IAuthStore {
   ) => Promise<{ success: boolean; error?: AppwriteException | null }>;
 
   createAccount: (
-    name: string,
     email: string,
-    password: string
+    password: string,
+    name: string
   ) => Promise<{ success: boolean; error?: AppwriteException | null }>;
 
   logout: () => Promise<void>;
@@ -78,7 +78,7 @@ export const useAuthStore = create<IAuthStore>()(
 
             createAccount: async (email, password, name)=>{
                 try {
-                    await account.create(ID.unique(), name,email, password);
+                    await account.create(ID.unique(),email, password, name);
                     return {success:true}
                 } catch (error) {
                     console.log("useAuth :: createAccount ::",error)
